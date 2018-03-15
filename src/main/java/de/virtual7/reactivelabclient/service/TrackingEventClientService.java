@@ -4,6 +4,7 @@ import de.virtual7.reactivelabclient.event.TrackingEvent;
 import de.virtual7.reactivelabclient.repository.TrackingEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.CassandraOperations;
+import org.springframework.data.cassandra.core.InsertOptions;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,8 @@ public class TrackingEventClientService {
 
 
     public void saveEvent(TrackingEvent event) {
+        // this.cassandraOperations.insert(event, InsertOptions.builder().ttl(1).build());
+
         repository.save(event);
     }
 

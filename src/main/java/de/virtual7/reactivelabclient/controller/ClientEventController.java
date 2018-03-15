@@ -59,7 +59,7 @@ public class ClientEventController {
                         buffer.add(value);
                         logger.info(value.toString());
                         if (count == 10) {
-                        //    trackingEventClientService.saveBulkEvents(buffer);
+                            trackingEventClientService.saveBulkEvents(buffer);
                             buffer.clear();
                             request(10);
                             count = 0;
